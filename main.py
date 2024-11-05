@@ -41,7 +41,6 @@ model = {
         }
     ],
     "Payments": [
-        # 1. Yöntem (tanımsız alt üye işyerleri için)
         {
             "AccountOwner": "HESAP SAHIBI",
             "IBAN": "TR720006701000000078840200",
@@ -51,10 +50,8 @@ model = {
     ],
 }
 
-# İsteği gönder
 response = requests.post(url, json=model, headers=headers)
 
-# Yanıtı kontrol et
 if response.status_code == 200:
     try:
         data = response.json()
